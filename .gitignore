@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+frontend/node_modules/
+
+# build files
+dist/
+frontend/dist/
+target/
+backend/target/
+
+# environment files
+.env
+.env.local
+application-secret.properties
+
+# IDE files
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
