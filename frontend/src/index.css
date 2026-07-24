@@ -9,18 +9,26 @@ body {
   color: #222;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   background: #1f2937;
   color: white;
   padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .navbar h2 {
-  margin: 0 0 10px 0;
+  margin: 0;
+  font-size: 20px;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -43,6 +51,16 @@ button {
   cursor: pointer;
 }
 
+/* ===== FORM ELEMENTS ===== */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
 input,
 select,
 textarea {
@@ -50,6 +68,10 @@ textarea {
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 14px;
 }
 
 .form-container {
@@ -57,12 +79,13 @@ textarea {
   background: white;
   padding: 25px;
   border-radius: 8px;
-  margin-top: 20px;
+  margin: 20px auto 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h1 {
   margin-top: 0;
+  text-align: center;
 }
 
 .form-container button {
@@ -73,6 +96,7 @@ textarea {
   border-radius: 5px;
   width: 100%;
   font-size: 15px;
+  margin-top: 8px;
 }
 
 .success {
@@ -80,6 +104,7 @@ textarea {
   background: #e8f7e8;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .error {
@@ -87,20 +112,23 @@ textarea {
   background: #fee2e2;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .user-info {
   color: #d1d5db;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .logout-btn {
   background: #ef4444;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
 }
+
 .large-form {
   max-width: 700px;
 }
@@ -109,6 +137,7 @@ textarea {
   resize: vertical;
 }
 
+/* ===== REPORT LIST / CARDS ===== */
 .report-list {
   display: grid;
   gap: 18px;
@@ -120,6 +149,8 @@ textarea {
   border-radius: 8px;
   border-left: 5px solid #2563eb;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .report-card h3 {
@@ -132,9 +163,11 @@ textarea {
   border: none;
   padding: 9px 15px;
   border-radius: 5px;
+  align-self: flex-start;
 }
 
 .status {
+  display: inline-block;
   font-weight: bold;
   padding: 4px 8px;
   border-radius: 4px;
@@ -150,20 +183,32 @@ textarea {
   color: #166534;
 }
 
+/* ===== FILTER BOX ===== */
 .filter-box {
   background: white;
   padding: 18px;
   border-radius: 8px;
   display: flex;
   gap: 15px;
-  align-items: end;
+  align-items: flex-end;
   flex-wrap: wrap;
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter-box div {
+  display: flex;
+  flex-direction: column;
   min-width: 180px;
+}
+
+.filter-box label {
+  margin-top: 0;
+}
+
+.filter-box input,
+.filter-box select {
+  margin-bottom: 0;
 }
 
 .filter-box button {
@@ -172,8 +217,10 @@ textarea {
   border: none;
   padding: 11px 18px;
   border-radius: 5px;
+  height: fit-content;
 }
 
+/* ===== DASHBOARD ===== */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -187,6 +234,8 @@ textarea {
   border-radius: 8px;
   border-left: 5px solid #2563eb;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .summary-card h3 {
@@ -214,6 +263,7 @@ textarea {
   height: 320px;
 }
 
+/* ===== TABLE ===== */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -225,8 +275,31 @@ textarea {
   border: 1px solid #e5e7eb;
   padding: 10px;
   text-align: left;
+  vertical-align: middle;
 }
 
 .data-table th {
   background: #f3f4f6;
+}
+
+.edit-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 4px;
+}
+
+.cancel-btn {
+  background: #6b7280 !important;
+  margin-top: 10px;
 }
