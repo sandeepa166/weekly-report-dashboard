@@ -1,5 +1,6 @@
 package com.weeklyreport.backend.repository;
 
+import com.weeklyreport.backend.model.Role;
 import com.weeklyreport.backend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -10,4 +11,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
     boolean existsByEmail(String email);
+
+    long countByRole(Role role);
 }
