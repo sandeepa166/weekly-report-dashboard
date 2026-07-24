@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.weeklyreport.backend.dto.LoginRequest;
 
 import java.util.Map;
 
@@ -28,4 +29,16 @@ public class AuthController {
             );
         }
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
+    try {
+        AuthResponse response = authService.login(request);
+        return ResponseEntity.ok(response);
+    } catch (IllegalArgumentException e) {
+        return ResponseEntity.badRequest().body(
+                Map.of("error", e.getMessage())
+        );
+    }
+}
 }

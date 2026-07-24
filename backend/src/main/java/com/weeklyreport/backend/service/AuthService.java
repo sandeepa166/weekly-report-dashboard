@@ -8,6 +8,7 @@ import com.weeklyreport.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.weeklyreport.backend.dto.LoginRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -45,4 +46,22 @@ public class AuthService {
                 savedUser.getRole().name()
         );
     }
+    
+    public AuthResponse login(LoginRequest request) {
+
+    User user = userRepository.findByEmail(request.getEmail())
+            .orElseThrow(() -> new IllegalArgumentException("Invalid email or password"));
+
+    if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        throw new IllegalArgumentException("Invalid email or password");
+    }
+
+    return new AuthResponse(
+            "Login successful",
+            user.getId(),
+            user.getName(),
+            user.getEmail(),
+            user.getRole().name()
+    );
+}
 }
