@@ -51,3 +51,53 @@ textarea {
   margin-top: 5px;
   margin-bottom: 12px;
 }
+
+.form-container {
+  max-width: 450px;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+  margin-top: 0;
+}
+
+.form-container button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.success {
+  color: green;
+  background: #e8f7e8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.user-info {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
